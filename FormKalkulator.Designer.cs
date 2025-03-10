@@ -78,6 +78,7 @@
             buttonNol.TabIndex = 1;
             buttonNol.Text = "0";
             buttonNol.UseVisualStyleBackColor = false;
+            buttonNol.Click += buttonNol_Click;
             // 
             // buttonEqual
             // 
@@ -105,6 +106,7 @@
             buttonKoma.TabIndex = 3;
             buttonKoma.Text = ".";
             buttonKoma.UseVisualStyleBackColor = false;
+            buttonKoma.Click += buttonKoma_Click;
             // 
             // buttonTiga
             // 
@@ -188,6 +190,7 @@
             buttonSub.TabIndex = 10;
             buttonSub.Text = "-";
             buttonSub.UseVisualStyleBackColor = false;
+            buttonSub.Click += buttonSub_Click;
             // 
             // buttonLima
             // 
@@ -243,6 +246,7 @@
             buttonMul.TabIndex = 14;
             buttonMul.Text = "X";
             buttonMul.UseVisualStyleBackColor = false;
+            buttonMul.Click += buttonMul_Click;
             // 
             // buttonDelapan
             // 
@@ -284,6 +288,7 @@
             buttonDel.TabIndex = 19;
             buttonDel.Text = "DEL";
             buttonDel.UseVisualStyleBackColor = false;
+            buttonDel.Click += buttonDel_Click;
             // 
             // buttonDiv
             // 
@@ -297,6 +302,7 @@
             buttonDiv.TabIndex = 18;
             buttonDiv.Text = "/";
             buttonDiv.UseVisualStyleBackColor = false;
+            buttonDiv.Click += buttonDiv_Click;
             // 
             // buttonClear
             // 
@@ -310,6 +316,7 @@
             buttonClear.TabIndex = 17;
             buttonClear.Text = "C";
             buttonClear.UseVisualStyleBackColor = false;
+            buttonClear.Click += buttonClear_Click;
             // 
             // buttonOnOff
             // 

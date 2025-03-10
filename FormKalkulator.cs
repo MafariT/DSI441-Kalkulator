@@ -16,6 +16,11 @@ namespace Kalkulator
 
         }
 
+        private void buttonNol_Click(object sender, EventArgs e)
+        {
+            num = 0;
+            textBoxView.Text += num.ToString();
+        }
         private void buttonSatu_Click(object sender, EventArgs e)
         {
             num = 1;
@@ -69,23 +74,91 @@ namespace Kalkulator
             num = 9;
             textBoxView.Text += num.ToString();
         }
+        private void buttonKoma_Click(object sender, EventArgs e)
+        {
+            if (!textBoxView.Text.Contains(","))
+            {
+                textBoxView.Text += ",";
+            }
+        }
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            first_num = double.Parse(textBoxView.Text);
-            operasi = "+";
-            textBoxView.Clear();
+            if (double.TryParse(textBoxView.Text, out first_num))
+            {
+                operasi = "+";
+                textBoxView.Clear();
+            }
+        }
+        private void buttonSub_Click(object sender, EventArgs e)
+        {
+            if (double.TryParse(textBoxView.Text, out first_num))
+            {
+                operasi = "-";
+                textBoxView.Clear();
+            }
+        }
+
+        private void buttonMul_Click(object sender, EventArgs e)
+        {
+            if (double.TryParse(textBoxView.Text, out first_num))
+            {
+                operasi = "*";
+                textBoxView.Clear();
+            }
+        }
+
+        private void buttonDiv_Click(object sender, EventArgs e)
+        {
+            if (double.TryParse(textBoxView.Text, out first_num))
+            {
+                operasi = "/";
+                textBoxView.Clear();
+            }
         }
 
         private void buttonEqual_Click(object sender, EventArgs e)
         {
             double second_num = double.Parse(textBoxView.Text);
             double hasil = 0;
-            if (operasi == "+") {
-                hasil = first_num + second_num;
+            switch (operasi)
+            {
+                case "+":
+                    hasil = first_num + second_num;
+                    break;
+                case "-":
+                    hasil = first_num - second_num;
+                    break;
+                case "*":
+                    hasil = first_num * second_num;
+                    break;
+                case "/":
+                    if (second_num != 0)
+                    {
+                        hasil = first_num / second_num;
+                    }
+                    else
+                    {
+                        textBoxView.Text = "Error";
+                        return;
+                    }
+                    break;
             }
             textBoxView.Text = hasil.ToString();
         }
 
+        private void buttonClear_Click(object sender, EventArgs e)
+        {
+            first_num = 0;
+            textBoxView.Clear();
+        }
+
+        private void buttonDel_Click(object sender, EventArgs e)
+        {
+            if (textBoxView.Text.Length > 0)
+            {
+                textBoxView.Text = textBoxView.Text.Remove(textBoxView.Text.Length - 1);
+            }
+        }
     }
 }
