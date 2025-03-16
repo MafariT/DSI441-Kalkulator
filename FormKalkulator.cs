@@ -11,11 +11,6 @@ namespace Kalkulator
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonNol_Click(object sender, EventArgs e)
         {
             num = 0;
@@ -160,5 +155,30 @@ namespace Kalkulator
                 textBoxView.Text = textBoxView.Text.Remove(textBoxView.Text.Length - 1);
             }
         }
+
+        private void buttonOnOff_Click(object sender, EventArgs e)
+        {
+            bool isEnabled = buttonNol.Enabled;
+
+            foreach (Control ctrl in this.Controls)
+            {
+                if (ctrl is Button btn && btn != buttonOnOff) // Kecuali On/Off button 
+                {
+                    btn.Enabled = !isEnabled;
+                }
+            }
+
+            textBoxView.Clear();
+        }
+
+        private void buttonPlusMinus_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(textBoxView.Text) && double.TryParse(textBoxView.Text, out double num))
+            {
+                num = -num;
+                textBoxView.Text = num.ToString();
+            }
+        }
+
     }
 }

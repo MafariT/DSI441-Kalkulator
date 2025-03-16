@@ -64,7 +64,7 @@
             buttonPlusMinus.TabIndex = 0;
             buttonPlusMinus.Text = "+/-";
             buttonPlusMinus.UseVisualStyleBackColor = false;
-            buttonPlusMinus.Click += button1_Click;
+            buttonPlusMinus.Click += buttonPlusMinus_Click;
             // 
             // buttonNol
             // 
@@ -330,6 +330,7 @@
             buttonOnOff.TabIndex = 16;
             buttonOnOff.Text = "ON/OFF";
             buttonOnOff.UseVisualStyleBackColor = false;
+            buttonOnOff.Click += buttonOnOff_Click;
             // 
             // textBoxView
             // 
@@ -340,9 +341,10 @@
             textBoxView.Location = new Point(12, 18);
             textBoxView.Name = "textBoxView";
             textBoxView.ReadOnly = true;
-            textBoxView.RightToLeft = RightToLeft.Yes;
+            textBoxView.RightToLeft = RightToLeft.No;
             textBoxView.Size = new Size(358, 86);
             textBoxView.TabIndex = 20;
+            textBoxView.TextAlign = HorizontalAlignment.Right;
             // 
             // formKalkulator
             // 
